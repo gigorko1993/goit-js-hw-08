@@ -1,2 +1,2 @@
-# goit-js-hw-08
-Модуль-8-Вслытие-событий.Chatty-events.Intersection-Observer
+# goit-js-hw-07
+Модуль7-DOM-События
