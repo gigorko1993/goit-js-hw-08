@@ -62,9 +62,16 @@ function onEscButtonPress(evt) {
     }
 }
 function onArrowButtonPress(evt) {
-    if (evt.code === 'ArrowRight' || evt.code === 'ArrowLeft') {
-        const arrayOfUrl = getArrayOfImageURL(markupElementsArray);
-        let indexInArray = arrayOfUrl.indexOf(overlayImageEl.src);
+    const arrayOfUrl = getArrayOfImageURL(markupElementsArray);
+    let indexInArray = arrayOfUrl.indexOf(overlayImageEl.src);
+    
+    if (evt.code === 'ArrowLeft' && indexInArray === 0) {
+        overlayImageEl.src = arrayOfUrl[arrayOfUrl.length - 1];
+    }
+    else if (evt.code === 'ArrowRight' && indexInArray === arrayOfUrl.length - 1) {
+        overlayImageEl.src = arrayOfUrl[0];
+    }
+    else if (evt.code === 'ArrowRight' || evt.code === 'ArrowLeft') {
 
         evt.code === 'ArrowLeft'
             ? overlayImageEl.src = arrayOfUrl[indexInArray - 1]
